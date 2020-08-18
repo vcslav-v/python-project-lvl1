@@ -1,6 +1,4 @@
 .venv
 .DS_Store
-vcslav_v_brain_games.egg-info
-poetry.lock
-pyproject.toml
+*.egg-info
 *.pyc
