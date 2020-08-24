@@ -2,18 +2,19 @@
 name = "vcslav-v_brain_games"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
-    { include = "brain_games" },
+  { include = "brain_games" },
 ]
 
 [tool.poetry.dependencies]
-python = "^2.7"
+python = "^3.8"
+prompt = "^0.4.1"
+
+[tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
-
-[tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry>=0.12"]
