@@ -1,0 +1,1 @@
+"""Study project in hexlet."""

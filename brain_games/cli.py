@@ -1,6 +1,13 @@
+"""Command Line Interface tools."""
+
 import prompt
 
+
 def welcome_user():
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}')
-    return name
+    """
+    Asks the user for their name'.
+
+    Returns:
+        str
+    """
+    return prompt.string('May I have your name? ')
