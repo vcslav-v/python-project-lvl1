@@ -8,7 +8,6 @@ def main():
     """Start game."""
     print('Welcome to the Brain Games!')  # noqa: WPS421
     print('Hello, {name}'.format(name=cli.welcome_user()))  # noqa: WPS421
-    cli.welcome_user()
 
 
 if __name__ == '__main__':
