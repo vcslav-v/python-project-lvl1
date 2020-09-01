@@ -5,4 +5,4 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/60768718e215b6456109/test_coverage)](https://codeclimate.com/github/vcslav-v/python-project-lvl1/test_coverage)
 
 
-[![How to use](https://asciinema.org/a/2CMaOTRjPRg59JqREZPW6LPMQ.svg)](https://asciinema.org/a/2CMaOTRjPRg59JqREZPW6LPMQ?autoplay=1)
+[![How to use](https://asciinema.org/a/akIP1uHpMZxNo6bs2EUFoPix7.svg)](https://asciinema.org/a/akIP1uHpMZxNo6bs2EUFoPix7?autoplay=1)

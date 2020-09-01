@@ -41,3 +41,12 @@ MULTIPLY = '*'
 OPERATIONS = (PLUS, MINUS, MULTIPLY)
 QUEST_EVAL_STRING = '{num1} {operation} {num2}'
 # endregion
+
+# region "GCD" game settings
+INSTRUCTION_STRING_GCD_GAME = (
+    'Find the greatest common divisor of given numbers.'
+    )
+MIN_NUMBER_FOR_GCD_GAME = 0
+MAX_NUMBER_FOR_GCD_GAME = 100
+QUEST_GDC_STRING = '{num1} {num2}'
+# endregion
