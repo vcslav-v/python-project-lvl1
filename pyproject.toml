@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vcslav-v_brain_games"
-version = "0.3.0"
+version = "0.3.2"
 description = ""
 authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
