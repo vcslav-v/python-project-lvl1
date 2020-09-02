@@ -1,10 +1,17 @@
 [tool.poetry]
 name = "vcslav-v_brain_games"
-version = "0.6.0"
-description = ""
+version = "0.6.1"
+description = "Hexlet study project - Brain Games"
 authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
   { include = "brain_games" },
+]
+repository = "https://github.com/vcslav-v/python-project-lvl1"
+classifiers = [
+    "Environment :: Console",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment"
 ]
 
 [tool.poetry.dependencies]
