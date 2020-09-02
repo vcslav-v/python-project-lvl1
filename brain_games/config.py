@@ -63,3 +63,12 @@ LENGTH_OF_PROGRESSION = 10
 ELEMENT_OF_PROGRESSION = '{element} '
 LOSE_ELEMENT = '..'
 # endregion
+
+# region "Prime" game settings
+INSTRUCTION_STRING_PRIME_GAME = (
+    'Answer "{yes}" if given number is prime. ' +
+    'Otherwise answer "{no}".'
+).format(yes=YES_ANSWER, no=NO_ANSWER)
+MIN_NUMBER_FOR_PRIME_GAME = 1
+MAX_NUMBER_FOR_PRIME_GAME = 1000
+# endregion

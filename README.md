@@ -24,3 +24,7 @@
 ### Progression
 
 [![How to use](https://asciinema.org/a/gf9dBFOyRm0m2FcmQT97KyEmH.svg)](https://asciinema.org/a/gf9dBFOyRm0m2FcmQT97KyEmH?autoplay=1)
+
+### Progression
+
+[![How to use](https://asciinema.org/a/3GrhzEOwCrP8UAQ9sTd2kNgrh.svg)](https://asciinema.org/a/3GrhzEOwCrP8UAQ9sTd2kNgrh?autoplay=1)
