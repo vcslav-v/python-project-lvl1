@@ -4,23 +4,23 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/60768718e215b6456109/test_coverage)](https://codeclimate.com/github/vcslav-v/python-project-lvl1/test_coverage)
 
-##How to install
+## How to install
 
 [![How to install](https://asciinema.org/a/ZUfzfIaTutPGMv7MLlUQDrxUM.svg)](https://asciinema.org/a/ZUfzfIaTutPGMv7MLlUQDrxUM?autoplay=1)
 
-##Games
-###Calculator
+## Games
+### Calculator
 
 [![How to use](https://asciinema.org/a/G7PfZdCjsSbFF4Uzch953G3zW.svg)](https://asciinema.org/a/G7PfZdCjsSbFF4Uzch953G3zW?autoplay=1)
 
-###Even or not
+### Even or not
 
 [![How to use](https://asciinema.org/a/GMHVEHAZh8ceFbCSbJrgGOT4e.svg)](https://asciinema.org/a/GMHVEHAZh8ceFbCSbJrgGOT4e?autoplay=1)
 
-###Greatest common divisor
+### Greatest common divisor
 
 [![How to use](https://asciinema.org/a/fM73qpvlzW2FAWiasvv3a7WrC.svg)](https://asciinema.org/a/fM73qpvlzW2FAWiasvv3a7WrC?autoplay=1)
 
-###Progression
+### Progression
 
 [![How to use](https://asciinema.org/a/gf9dBFOyRm0m2FcmQT97KyEmH.svg)](https://asciinema.org/a/gf9dBFOyRm0m2FcmQT97KyEmH?autoplay=1)
