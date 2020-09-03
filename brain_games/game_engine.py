@@ -3,11 +3,12 @@
 from brain_games import cli, config
 
 
-def game(questions_generator) -> bool:
+def game(questions_generator, answer_re_pattern) -> bool:
     """Make common flow ask-answer-ask.
 
     Parameters:
         questions_generator: function return ('quest','right_answer')
+        answer_re_pattern: regex pattern for check correctly user answer
 
     Returns:
         True if user win, False if not
@@ -16,7 +17,7 @@ def game(questions_generator) -> bool:
     while attempt < config.NUMBER_OF_ATTEMPTS:
         quest, right_answer = questions_generator()
         cli.text_to_out(config.QUESTION_STRING.format(quest=quest))
-        answer = cli.ask_user()
+        answer = cli.ask_user(pattern=answer_re_pattern)
         if answer != right_answer:
             cli.text_to_out(config.WRONG_STRING.format(
                 wrong_answer=answer,
@@ -41,14 +42,15 @@ def summary(name: str, player_result: bool):
         cli.text_to_out(config.LOSE_STRING.format(name=name), big_gap=True)
 
 
-def start(questions_generator, instuction: str):
+def start(questions_generator, instuction: str, answer_re_pattern: str = '.*'):
     """Start game flow.
 
     Parameters:
         questions_generator: function return ('quest','right_answer')
         instuction: String instruction for game
+        answer_re_pattern: regex pattern for check correctly user answer
     """
     cli.welcome(instuction)
     name = cli.ask_name()
-    player_result = game(questions_generator)
+    player_result = game(questions_generator, answer_re_pattern)
     summary(name, player_result)

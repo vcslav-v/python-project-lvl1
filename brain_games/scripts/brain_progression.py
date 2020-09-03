@@ -6,10 +6,11 @@ from brain_games.games import progression_game
 
 
 def main():
-    """Start GCD game."""
+    """Start Progression game."""
     game_engine.start(
         progression_game.questions_generator,
         config.INSTRUCTION_STRING_PROGRESSION_GAME,
+        config.RE_ANSWER_PATTERN_NUMBER,
         )
 
 

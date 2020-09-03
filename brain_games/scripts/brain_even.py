@@ -10,6 +10,7 @@ def main():
     game_engine.start(
         even_game.questions_generator,
         config.INSTRUCTION_STRING_EVEN_OR_NOT_GAME,
+        config.RE_ANSWER_PATTERN_YES_OR_NO,
         )
 
 

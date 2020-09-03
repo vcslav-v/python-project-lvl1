@@ -10,6 +10,7 @@ def main():
     game_engine.start(
         gcd_game.questions_generator,
         config.INSTRUCTION_STRING_GCD_GAME,
+        config.RE_ANSWER_PATTERN_NUMBER,
         )
 
 

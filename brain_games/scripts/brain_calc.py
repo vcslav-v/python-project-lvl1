@@ -10,6 +10,7 @@ def main():
     game_engine.start(
         calc_game.questions_generator,
         config.INSTRUCTION_STRING_CALC_GAME,
+        config.RE_ANSWER_PATTERN_NUMBER,
         )
 
 

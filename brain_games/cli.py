@@ -36,13 +36,17 @@ def ask_name() -> str:
     return name
 
 
-def ask_user() -> str:
+def ask_user(pattern: str = '.*') -> str:
     """Ask user answer and return.
+
+    Parameters:
+        pattern: regex pattern for check correctly user answer
 
     Returns:
         Player's answer
     """
-    return prompt.string(config.ASK_ANSWER_STRING)
+    answer = prompt.regex(pattern, prompt=config.ASK_ANSWER_STRING)
+    return answer.group()
 
 
 def text_to_out(text: str, big_gap: bool = False):
