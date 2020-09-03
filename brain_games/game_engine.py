@@ -3,14 +3,14 @@
 from brain_games import cli, config
 
 
-def game(questions_generator):
-    """Make common flow ask-answer-ask, return True if user win, False if not.
+def game(questions_generator) -> bool:
+    """Make common flow ask-answer-ask.
 
     Parameters:
         questions_generator: function return ('quest','right_answer')
 
     Returns:
-        bool
+        True if user win, False if not
     """
     attempt = 0
     while attempt < config.NUMBER_OF_ATTEMPTS:
@@ -28,12 +28,12 @@ def game(questions_generator):
     return True
 
 
-def summary(name, player_result):
+def summary(name: str, player_result: bool):
     """Print sums up the game.
 
     Parameters:
-        name: str
-        player_result: bool
+        name: Name of player
+        player_result: True if player win, False if one lose
     """
     if player_result:
         cli.text_to_out(config.WIN_STRING.format(name=name), big_gap=True)
@@ -41,12 +41,12 @@ def summary(name, player_result):
         cli.text_to_out(config.LOSE_STRING.format(name=name), big_gap=True)
 
 
-def start(questions_generator, instuction):
+def start(questions_generator, instuction: str):
     """Start game flow.
 
     Parameters:
         questions_generator: function return ('quest','right_answer')
-        instuction: str
+        instuction: String instruction for game
     """
     cli.welcome(instuction)
     name = cli.ask_name()

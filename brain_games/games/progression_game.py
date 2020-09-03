@@ -5,15 +5,15 @@ from random import choice, randint
 from brain_games import config
 
 
-def make_progression(start_num, difference):
+def make_progression(start_num: int, difference: int) -> list:
     """Generate arithmetic progression.
 
     Parameters:
-        start_num:int
-        difference:int
+        start_num: First progression's element
+        difference: Difference betwin n+1 and n progression's elements
 
     Returns:
-        list
+        Progression
     """
     progression = []
     for multiplier in range(config.LENGTH_OF_PROGRESSION):
@@ -21,14 +21,14 @@ def make_progression(start_num, difference):
     return progression
 
 
-def quest_progression(progression):
+def quest_progression(progression: list) -> tuple:
     """Generate quest progression with lose element from list.
 
     Parameters:
-        progression:list
+        progression: list of int numbers
 
     Returns:
-        tuple
+        ('string without one element', 'missing element')
     """
     quest_num = choice(progression)  # noqa:S311
     str_pogression = ''
@@ -46,11 +46,11 @@ def quest_progression(progression):
     return str_pogression.strip(), str(quest_num)
 
 
-def questions_generator():
+def questions_generator() -> tuple:
     """Generate quest/answer for Progression game.
 
     Returns:
-        tuple
+        (quest, right answer)
     """
     difference = randint(  # noqa: S311
         config.MIN_DIFF_FOR_PROGRESSION_GAME,

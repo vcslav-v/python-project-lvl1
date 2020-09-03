@@ -6,14 +6,14 @@ from random import randint
 from brain_games import config
 
 
-def is_prime(number):
+def is_prime(number: int) -> bool:
     """Check is number prime.
 
     Parameters:
-        number:int
+        number: Number for prime-number testing
 
     Returns:
-        bool
+        True if number is prime, False if one not
     """
     if number < 2:
         return False
@@ -23,11 +23,11 @@ def is_prime(number):
     return True
 
 
-def questions_generator():
+def questions_generator() -> tuple:
     """Generate quest/answer for Prime game.
 
     Returns:
-        tuple
+        (quest, right answer)
     """
     number = randint(  # noqa: S311
         config.MIN_NUMBER_FOR_PRIME_GAME,

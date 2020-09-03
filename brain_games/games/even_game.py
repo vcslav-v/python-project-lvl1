@@ -5,11 +5,11 @@ from random import randint
 from brain_games import config
 
 
-def questions_generator():
+def questions_generator() -> tuple:
     """Generate quest/answer for even or not game.
 
     Returns:
-        tuple
+        (quest, right answer)
     """
     quest = randint(  # noqa: S311
         config.MIN_NUMBER_FOR_QUESTION_EVEN_OR_NOT_GAME,

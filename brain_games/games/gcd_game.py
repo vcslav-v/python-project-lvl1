@@ -5,26 +5,26 @@ from random import randint
 from brain_games import config
 
 
-def gdc(num1, num2):
+def gdc(num1: int, num2: int) -> int:
     """Find greatest common divisor for 2 numbers.
 
     Parameters:
-        num1:int
-        num2:int
+        num1: First number
+        num2: Second number
 
     Returns:
-        int
+        Greatest common divisor
     """
     if num2 == 0:
         return num1
     return gdc(num2, num1 % num2)
 
 
-def questions_generator():
+def questions_generator() -> tuple:
     """Generate quest/answer for GDC game.
 
     Returns:
-        tuple
+        (quest, right answer)
     """
     num1 = randint(  # noqa: S311
         config.MIN_NUMBER_FOR_GCD_GAME,

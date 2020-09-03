@@ -5,16 +5,16 @@ from random import choice, randint
 from brain_games import config
 
 
-def solver(num1, num2, operation):
-    """Solve expression like num1 {operation} num2, {operation} can be '+'/'-'/'*'.
+def solver(num1: int, num2: int, operation: str) -> str:
+    """Solve expression like num1 {operation} num2.
 
     Parameters:
-        num1:int
-        num2:int
-        operation:str
+        num1: First number in expression
+        num2: Second number in expression
+        operation: May be '+', '-' or '*'
 
     Returns:
-        str
+        Result of the expression
     """
     if operation == config.PLUS:
         return str(num1 + num2)
@@ -25,11 +25,11 @@ def solver(num1, num2, operation):
     return config.ERROR_STRING
 
 
-def questions_generator():
+def questions_generator() -> tuple:
     """Generate quest/answer for Calculator game.
 
     Returns:
-        tuple
+        (quest, right answer)
     """
     num1 = randint(  # noqa: S311
         config.MIN_NUMBER_FOR_CALCULATOR_GAME,
