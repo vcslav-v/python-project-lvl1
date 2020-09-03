@@ -40,11 +40,6 @@ INSTRUCTION_STRING_EVEN_OR_NOT_GAME = (
 INSTRUCTION_STRING_CALC_GAME = 'What is the result of the expression?'
 MIN_NUMBER_FOR_CALCULATOR_GAME = 0
 MAX_NUMBER_FOR_CALCULATOR_GAME = 20
-OPERATIONS = {  # noqa: WPS407
-    '+': lambda num1, num2: num1+num2,
-    '-': lambda num1, num2: num1-num2,
-    '*': lambda num1, num2: num1*num2,
-    }
 QUEST_EVAL_STRING = '{num1} {operation} {num2}'
 # endregion
 

@@ -1,5 +1,6 @@
 """Calculator game."""
 
+from operator import add, mul, sub
 from random import choice, randint
 
 from brain_games import config
@@ -19,11 +20,15 @@ def questions_generator() -> tuple:
         config.MIN_NUMBER_FOR_CALCULATOR_GAME,
         config.MAX_NUMBER_FOR_CALCULATOR_GAME,
         )
-    operation = choice(list(config.OPERATIONS))  # noqa: S311
+    operations = {
+        '+': add(num1, num2),
+        '-': sub(num1, num2),
+        '*': mul(num1, num2),
+    }
+    operation = choice(list(operations))  # noqa: S311
     expression = config.QUEST_EVAL_STRING.format(
         num1=str(num1),
         operation=operation,
         num2=str(num2),
         )
-    right_answer = str(config.OPERATIONS[operation](num1, num2))
-    return (expression, right_answer)
+    return (expression, str(operations[operation]))
