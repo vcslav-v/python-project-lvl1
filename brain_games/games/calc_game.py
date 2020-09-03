@@ -22,7 +22,6 @@ def solver(num1: int, num2: int, operation: str) -> str:
         return str(num1 - num2)
     elif operation == config.MULTIPLY:
         return str(num1 * num2)
-    return config.ERROR_STRING
 
 
 def questions_generator() -> tuple:

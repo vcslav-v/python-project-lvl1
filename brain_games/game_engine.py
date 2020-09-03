@@ -42,7 +42,11 @@ def summary(name: str, player_result: bool):
         cli.text_to_out(config.LOSE_STRING.format(name=name), big_gap=True)
 
 
-def start(questions_generator, instuction: str, answer_re_pattern: str = '.*'):
+def start(
+    questions_generator: callable,
+    instuction: str,
+    answer_re_pattern: str = '.*',
+):
     """Start game flow.
 
     Parameters:
