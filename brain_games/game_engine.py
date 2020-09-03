@@ -18,16 +18,14 @@ def game(questions_generator):
         cli.text_to_out(config.QUESTION_STRING.format(quest=quest))
         answer = cli.ask_user()
         if answer != right_answer:
-            break
+            cli.text_to_out(config.WRONG_STRING.format(
+                wrong_answer=answer,
+                right_answer=right_answer,
+                ))
+            return False
         cli.text_to_out(config.CORRECT_STRING, big_gap=True)
         attempt += 1
-    else:
-        return True
-    cli.text_to_out(config.WRONG_STRING.format(
-        wrong_answer=answer,
-        right_answer=right_answer,
-        ))
-    return False
+    return True
 
 
 def summary(name, player_result):
