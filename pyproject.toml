@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vcslav-v_brain_games"
-version = "0.6.1"
+version = "0.6.2"
 description = "Hexlet study project - Brain Games"
 authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
