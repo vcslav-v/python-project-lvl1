@@ -16,8 +16,8 @@ def game(questions_generator):
     while attempt < config.NUMBER_OF_ATTEMPTS:
         quest, right_answer = questions_generator()
         cli.text_to_out(config.QUESTION_STRING.format(quest=quest))
-        is_win, answer = check_win(right_answer)
-        if not is_win:
+        answer = cli.ask_user()
+        if answer != right_answer:
             break
         cli.text_to_out(config.CORRECT_STRING, big_gap=True)
         attempt += 1
@@ -28,21 +28,6 @@ def game(questions_generator):
         right_answer=right_answer,
         ))
     return False
-
-
-def check_win(right_answer):
-    """Ask player's answer, return True if player win or False if lose.
-
-    Parameters:
-        right_answer: str
-
-    Returns:
-        (bool, str)
-    """
-    answer = cli.ask_user()
-    if answer == right_answer:
-        return True, answer
-    return False, answer
 
 
 def summary(name, player_result):
