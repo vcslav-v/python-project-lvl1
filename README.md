@@ -2,11 +2,15 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/60768718e215b6456109/maintainability)](https://codeclimate.com/github/vcslav-v/python-project-lvl1/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/60768718e215b6456109/test_coverage)](https://codeclimate.com/github/vcslav-v/python-project-lvl1/test_coverage)
+
 
 ## How to install
 
-[![How to install](https://asciinema.org/a/ZUfzfIaTutPGMv7MLlUQDrxUM.svg)](https://asciinema.org/a/ZUfzfIaTutPGMv7MLlUQDrxUM?autoplay=1)
+'''
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ vcslav-v-brain-games
+'''
+
+[![How to install](https://asciinema.org/a/MbHS3kct1KkC4w50pJLu4qmZP.svg)](https://asciinema.org/a/MbHS3kct1KkC4w50pJLu4qmZP?autoplay=1)
 
 ## Games
 ### Calculator

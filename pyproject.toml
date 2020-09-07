@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vcslav-v_brain_games"
-version = "0.6.3"
+version = "0.6.7"
 description = "Hexlet study project - Brain Games"
 authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
@@ -13,6 +13,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Games/Entertainment"
 ]
+
+[[tool.poetry.source]]
+name = "prompt"
+url = "https://pypi.org/simple/"
 
 [tool.poetry.dependencies]
 python = "^3.8"
