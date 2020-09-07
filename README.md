@@ -6,9 +6,9 @@
 
 ## How to install
 
-'''
+```
 pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ vcslav-v-brain-games
-'''
+```
 
 [![How to install](https://asciinema.org/a/MbHS3kct1KkC4w50pJLu4qmZP.svg)](https://asciinema.org/a/MbHS3kct1KkC4w50pJLu4qmZP?autoplay=1)
 
