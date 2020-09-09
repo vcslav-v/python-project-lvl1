@@ -5,16 +5,6 @@ import prompt
 from brain_games import config
 
 
-def welcome_user() -> str:
-    """
-    Asks the user for their name'.
-
-    Returns:
-        Player name
-    """
-    return prompt.string('May I have your name? ')
-
-
 def welcome(instuction: str):
     """Greets the player.
 

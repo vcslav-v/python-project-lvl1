@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vcslav-v_brain_games"
-version = "0.6.7"
+version = "0.6.8"
 description = "Hexlet study project - Brain Games"
 authors = ["vcslav-v <vcslav.v@gmail.com>"]
 packages = [
@@ -26,7 +26,6 @@ prompt = "^0.4.1"
 wemake-python-styleguide = "^0.14.1"
 
 [tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
