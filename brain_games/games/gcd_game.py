@@ -2,7 +2,7 @@
 
 from random import randint
 
-from brain_games import config
+from brain_games import config, game_engine
 
 
 def gdc(num1: int, num2: int) -> int:
@@ -20,20 +20,35 @@ def gdc(num1: int, num2: int) -> int:
     return gdc(num2, num1 % num2)
 
 
-def questions_generator() -> tuple:
+MIN_NUMBER = 0
+MAX_NUMBER = 100
+QUEST_STRING_PATTERN = '{num1} {num2}'
+
+
+def get_question_answer() -> tuple:
     """Generate quest/answer for GDC game.
 
     Returns:
         (quest, right answer)
     """
-    num1 = randint(  # noqa: S311
-        config.MIN_NUMBER_FOR_GCD_GAME,
-        config.MAX_NUMBER_FOR_GCD_GAME,
-        )
-    num2 = randint(  # noqa: S311
-        config.MIN_NUMBER_FOR_GCD_GAME,
-        config.MAX_NUMBER_FOR_GCD_GAME,
-        )
+    num1 = randint(MIN_NUMBER, MAX_NUMBER)
+    num2 = randint(MIN_NUMBER, MAX_NUMBER)
     right_answer = str(gdc(num1, num2))
-    quest = config.QUEST_GDC_STRING.format(num1=num1, num2=num2)
-    return (quest, right_answer)
+    question = QUEST_STRING_PATTERN.format(num1=num1, num2=num2)
+    return (question, right_answer)
+
+
+INSTRUCTION = 'Find the greatest common divisor of given numbers.'
+
+
+def main():
+    """Start GCD game."""
+    game_engine.start(
+        get_question_answer,
+        INSTRUCTION,
+        config.RE_ANSWER_PATTERN_NUMBER,
+    )
+
+
+if __name__ == '__main__':
+    main()

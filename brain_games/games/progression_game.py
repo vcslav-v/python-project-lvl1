@@ -1,8 +1,10 @@
 """Progression game."""
 
-from random import choice, randint
+from random import randint
 
-from brain_games import config
+from brain_games import config, game_engine
+
+LENGTH_OF_PROGRESSION = 10
 
 
 def make_progression(start_num: int, difference: int) -> list:
@@ -16,49 +18,49 @@ def make_progression(start_num: int, difference: int) -> list:
         Progression
     """
     progression = []
-    for multiplier in range(config.LENGTH_OF_PROGRESSION):
+    for multiplier in range(LENGTH_OF_PROGRESSION):
         progression.append(start_num + difference * multiplier)
     return progression
 
 
-def quest_progression(progression: list) -> tuple:
-    """Generate quest progression with lose element from list.
-
-    Parameters:
-        progression: list of int numbers
-
-    Returns:
-        ('string without one element', 'missing element')
-    """
-    quest_num = choice(progression)  # noqa:S311
-    str_pogression = ''
-    for element in progression:
-        if element == quest_num:
-            str_pogression += (
-                config.ELEMENT_OF_PROGRESSION.format(
-                    element=config.LOSE_ELEMENT,
-                    )
-            )
-        else:
-            str_pogression += (
-                config.ELEMENT_OF_PROGRESSION.format(element=str(element))
-            )
-    return str_pogression.strip(), str(quest_num)
+MIN_DIFF = 1
+MAX_DIFF = 10
+MIN_START = 0
+MAX_START = 10
+SEPARATOR = ' '
+LOSE_ELEMENT = '..'
 
 
-def questions_generator() -> tuple:
+def get_question_answer() -> tuple:
     """Generate quest/answer for Progression game.
 
     Returns:
         (quest, right answer)
     """
-    difference = randint(  # noqa: S311
-        config.MIN_DIFF_FOR_PROGRESSION_GAME,
-        config.MAX_DIFF_FOR_PROGRESSION_GAME,
-        )
-    start_num = randint(  # noqa: S311
-        config.MIN_START_FOR_PROGRESSION_GAME,
-        config.MAX_START_FOR_PROGRESSION_GAME,
-        )
+    difference = randint(MIN_DIFF, MAX_DIFF)
+    start_num = randint(MIN_START, MAX_START)
     progression = make_progression(start_num, difference)
-    return quest_progression(progression)
+
+    question_index = randint(0, LENGTH_OF_PROGRESSION - 1)
+    question = start_num + difference * question_index
+
+    progression = list(map(str, progression))
+    progression[question_index] = LOSE_ELEMENT
+
+    return SEPARATOR.join(progression), str(question)
+
+
+INSTRUCTION = 'What number is missing in the progression?'
+
+
+def main():
+    """Start progression game."""
+    game_engine.start(
+        get_question_answer,
+        INSTRUCTION,
+        config.RE_ANSWER_PATTERN_NUMBER,
+    )
+
+
+if __name__ == '__main__':
+    main()

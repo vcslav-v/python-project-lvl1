@@ -22,7 +22,7 @@ def game(questions_generator, answer_re_pattern) -> bool:
             cli.text_to_out(config.WRONG_STRING.format(
                 wrong_answer=answer,
                 right_answer=right_answer,
-                ))
+            ))
             return False
         cli.text_to_out(config.CORRECT_STRING, big_gap=True)
         attempt += 1
