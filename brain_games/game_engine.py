@@ -29,19 +29,6 @@ def game(questions_generator, answer_re_pattern) -> bool:
     return True
 
 
-def summary(name: str, player_result: bool):
-    """Print sums up the game.
-
-    Parameters:
-        name: Name of player
-        player_result: True if player win, False if one lose
-    """
-    if player_result:
-        cli.text_to_out(config.WIN_STRING.format(name=name), big_gap=True)
-    else:
-        cli.text_to_out(config.LOSE_STRING.format(name=name), big_gap=True)
-
-
 def start(
     questions_generator: callable,
     instuction: str,
@@ -54,7 +41,14 @@ def start(
         instuction: String instruction for game
         answer_re_pattern: regex pattern for check correctly user answer
     """
-    cli.welcome(instuction)
-    name = cli.ask_name()
+    cli.text_to_out(config.HELLO_STRING)
+    cli.text_to_out(instuction, big_gap=True)
+
+    name = cli.ask_user(text=config.ASK_NAME_STRING)
+    cli.text_to_out(config.HELLO_NAME_STRING.format(name=name), big_gap=True)
+
     player_result = game(questions_generator, answer_re_pattern)
-    summary(name, player_result)
+    if player_result:
+        cli.text_to_out(config.WIN_STRING.format(name=name), big_gap=True)
+    else:
+        cli.text_to_out(config.LOSE_STRING.format(name=name), big_gap=True)

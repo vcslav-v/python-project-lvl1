@@ -5,37 +5,20 @@ import prompt
 from brain_games import config
 
 
-def welcome(instuction: str):
-    """Greets the player.
-
-    Parameters:
-        instuction: String-instruction for the game
-    """
-    text_to_out(config.HELLO_STRING)
-    text_to_out(instuction, big_gap=True)
-
-
-def ask_name() -> str:
-    """Asks for the player's name.
-
-    Returns:
-        Player name
-    """
-    name = prompt.string(config.ASK_NAME_STRING)
-    text_to_out(config.HELLO_NAME_STRING.format(name=name), big_gap=True)
-    return name
-
-
-def ask_user(pattern: str = '.*') -> str:
+def ask_user(
+    text: str = config.ASK_ANSWER_STRING,
+    pattern: str = '.*',
+) -> str:
     """Ask user answer and return.
 
     Parameters:
         pattern: regex pattern for check correctly user answer
+        text: question text
 
     Returns:
         Player's answer
     """
-    answer = prompt.regex(pattern, prompt=config.ASK_ANSWER_STRING)
+    answer = prompt.regex(pattern, prompt=text)
     return answer.group()
 
 
