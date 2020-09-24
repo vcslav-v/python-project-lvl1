@@ -2,7 +2,7 @@
 
 from random import randint
 
-from brain_games import config, game_engine
+from brain_games import game_engine
 
 LENGTH_OF_PROGRESSION = 10
 
@@ -47,7 +47,7 @@ def get_question_answer() -> tuple:
     progression = list(map(str, progression))
     progression[question_index] = LOSE_ELEMENT
 
-    return SEPARATOR.join(progression), str(question)
+    return SEPARATOR.join(progression), question
 
 
 INSTRUCTION = 'What number is missing in the progression?'
@@ -58,9 +58,4 @@ def main():
     game_engine.start(
         get_question_answer,
         INSTRUCTION,
-        config.RE_ANSWER_PATTERN_NUMBER,
     )
-
-
-if __name__ == '__main__':
-    main()

@@ -33,12 +33,12 @@ def get_question_answer() -> tuple:
     Returns:
         (quest, right answer)
     """
-    number = randint(MIN_NUMBER, MAX_NUMBER)
-    if is_prime(number):
+    quest = randint(MIN_NUMBER, MAX_NUMBER)
+    if is_prime(quest):
         answer = config.YES_ANSWER
     else:
         answer = config.NO_ANSWER
-    return str(number), answer
+    return str(quest), answer
 
 
 INSTRUCTION = (
@@ -51,9 +51,4 @@ def main():
     game_engine.start(
         get_question_answer,
         INSTRUCTION,
-        config.RE_ANSWER_PATTERN_YES_OR_NO,
     )
-
-
-if __name__ == '__main__':
-    main()

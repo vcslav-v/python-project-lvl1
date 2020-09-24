@@ -32,9 +32,4 @@ def main():
     game_engine.start(
         get_question_answer,
         INSTRUCTION,
-        config.RE_ANSWER_PATTERN_YES_OR_NO,
     )
-
-
-if __name__ == '__main__':
-    main()
