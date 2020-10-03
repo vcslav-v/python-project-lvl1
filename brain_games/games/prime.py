@@ -3,7 +3,13 @@
 from math import sqrt
 from random import randint
 
-from brain_games import config, game_engine
+from brain_games import config
+
+MIN_NUMBER = 1
+MAX_NUMBER = 1000
+INSTRUCTION = (
+    'Answer "{yes}" if given number is prime. Otherwise answer "{no}".'
+).format(yes=config.YES_ANSWER, no=config.NO_ANSWER)
 
 
 def is_prime(number: int) -> bool:
@@ -23,11 +29,7 @@ def is_prime(number: int) -> bool:
     return True
 
 
-MIN_NUMBER = 1
-MAX_NUMBER = 1000
-
-
-def get_question_answer() -> tuple:
+def get_round_data() -> tuple:
     """Generate quest/answer for Prime game.
 
     Returns:
@@ -39,16 +41,3 @@ def get_question_answer() -> tuple:
     else:
         answer = config.NO_ANSWER
     return str(quest), answer
-
-
-INSTRUCTION = (
-    'Answer "{yes}" if given number is prime. Otherwise answer "{no}".'
-).format(yes=config.YES_ANSWER, no=config.NO_ANSWER)
-
-
-def main():
-    """Start prime game."""
-    game_engine.start(
-        get_question_answer,
-        INSTRUCTION,
-    )

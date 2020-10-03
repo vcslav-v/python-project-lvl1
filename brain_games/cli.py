@@ -5,11 +5,11 @@ import prompt
 from brain_games import config
 
 
-def ask_user(
-    text: str = config.ASK_ANSWER_STRING,
+def ask(
+    text: str = config.ASK_ANSWER_PATTERN,
     pattern: str = '.*',
 ) -> str:
-    """Ask user answer and return.
+    """Ask answer and return.
 
     Parameters:
         pattern: regex pattern for check correctly user answer
@@ -22,8 +22,8 @@ def ask_user(
     return answer.group()
 
 
-def text_to_out(text: str, big_gap: bool = False):
-    """Print text to std.out.
+def print_text(text: str, big_gap: bool = False):
+    """Print text to steam.
 
     Parameters:
         text: What must be print

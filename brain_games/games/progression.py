@@ -2,9 +2,14 @@
 
 from random import randint
 
-from brain_games import game_engine
-
 LENGTH_OF_PROGRESSION = 10
+MIN_DIFF = 1
+MAX_DIFF = 10
+MIN_START = 0
+MAX_START = 10
+SEPARATOR = ' '
+LOSE_ELEMENT = '..'
+INSTRUCTION = 'What number is missing in the progression?'
 
 
 def make_progression(start_num: int, difference: int) -> list:
@@ -23,15 +28,7 @@ def make_progression(start_num: int, difference: int) -> list:
     return progression
 
 
-MIN_DIFF = 1
-MAX_DIFF = 10
-MIN_START = 0
-MAX_START = 10
-SEPARATOR = ' '
-LOSE_ELEMENT = '..'
-
-
-def get_question_answer() -> tuple:
+def get_round_data() -> tuple:
     """Generate quest/answer for Progression game.
 
     Returns:
@@ -42,20 +39,10 @@ def get_question_answer() -> tuple:
     progression = make_progression(start_num, difference)
 
     question_index = randint(0, LENGTH_OF_PROGRESSION - 1)
-    question = start_num + difference * question_index
+    answer = str(start_num + difference * question_index)
 
     progression = list(map(str, progression))
     progression[question_index] = LOSE_ELEMENT
+    quest = SEPARATOR.join(progression)
 
-    return SEPARATOR.join(progression), question
-
-
-INSTRUCTION = 'What number is missing in the progression?'
-
-
-def main():
-    """Start progression game."""
-    game_engine.start(
-        get_question_answer,
-        INSTRUCTION,
-    )
+    return quest, answer
