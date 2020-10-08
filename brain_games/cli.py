@@ -6,7 +6,7 @@ from brain_games import config
 
 
 def ask(
-    text: str = config.ASK_ANSWER_PATTERN,
+    text: str = config.ANSWER_PATTERN,
     pattern: str = '.*',
 ) -> str:
     """Ask answer and return.

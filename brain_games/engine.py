@@ -14,7 +14,7 @@ def run(game):
     cli.print_text(config.HELLO_PATTERN)
     cli.print_text(game.INSTRUCTION, big_gap=True)
 
-    name = cli.ask(text=config.ASK_NAME_PATTERN)
+    name = cli.ask(text=config.NAME_PATTERN)
     cli.print_text(config.HELLO_NAME_PATTERN.format(name=name), big_gap=True)
 
     attempt = 0

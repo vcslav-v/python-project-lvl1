@@ -2,13 +2,9 @@
 
 from random import randint
 
-from brain_games import config
-
 MIN_NUMBER = -100
 MAX_NUMBER = 100
-INSTRUCTION = (
-    'Answer "{yes}" if number even otherwise answer "{no}".'
-).format(yes=config.YES_ANSWER, no=config.NO_ANSWER)
+INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".'
 
 
 def get_round_data() -> tuple:
@@ -19,7 +15,7 @@ def get_round_data() -> tuple:
     """
     quest = randint(MIN_NUMBER, MAX_NUMBER)
     if quest % 2 == 0:
-        answer = config.YES_ANSWER
+        answer = 'yes'
     else:
-        answer = config.NO_ANSWER
+        answer = 'no'
     return quest, answer

@@ -3,13 +3,9 @@
 from math import sqrt
 from random import randint
 
-from brain_games import config
-
 MIN_NUMBER = 1
 MAX_NUMBER = 1000
-INSTRUCTION = (
-    'Answer "{yes}" if given number is prime. Otherwise answer "{no}".'
-).format(yes=config.YES_ANSWER, no=config.NO_ANSWER)
+INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(number: int) -> bool:
@@ -37,7 +33,7 @@ def get_round_data() -> tuple:
     """
     quest = randint(MIN_NUMBER, MAX_NUMBER)
     if is_prime(quest):
-        answer = config.YES_ANSWER
+        answer = 'yes'
     else:
-        answer = config.NO_ANSWER
+        answer = 'no'
     return str(quest), answer

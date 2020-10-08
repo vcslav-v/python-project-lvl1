@@ -2,7 +2,7 @@
 
 HELLO_PATTERN = 'Welcome to the Brain Games!'
 HELLO_NAME_PATTERN = 'Hello, {name}!'
-ASK_NAME_PATTERN = 'May I have your name? '
+NAME_PATTERN = 'May I have your name? '
 WIN_PATTERN = 'Congratulations, {name}!'
 WRONG_PATTERN = (
     '{wrong_answer} is wrong answer ;(. Correct answer was {right_answer}.'
@@ -10,7 +10,7 @@ WRONG_PATTERN = (
 LOSE_PATTERN = ("Let's try again, {name}!")
 QUESTION_PATTERN = 'Question: {quest}'
 CORRECT_PATTERN = 'Correct!'
-ASK_ANSWER_PATTERN = 'Your answer: '
+ANSWER_PATTERN = 'Your answer: '
 ERROR_PATTERN = 'ERROR'
 GAP_STING = '\n\n'
 
